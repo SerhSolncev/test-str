@@ -1,0 +1,19 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/vars" as *;
+
+.section {
+	position: relative;
+
+	&--hero {
+
+		@media(max-width: 991px) {
+			overflow-x: hidden;
+			margin: get-rem(-33) 0 get-rem(80);
+		}
+
+		@media(max-width: 767px) {
+			margin: 0 0 get-rem(80);
+		}
+	}
+}
+

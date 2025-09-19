@@ -1,0 +1,42 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/vars" as *;
+
+.title {
+
+	&--simple {
+		font: 300 #{get-rem(16)}/1 $mainFont;
+		letter-spacing: 0.01em;
+
+		@media(min-width: 768px) {
+			font-size: get-rem(18);
+		}
+
+		@media(min-width: 1200px) {
+			font-size: get-vw(24);
+		}
+
+		@media(min-width: 1921px) {
+		    font-size: get-rem(24);
+		}
+	}
+
+	&--nice-default {
+		font: 400 #{get-rem(22)}/1 $secondFont;
+
+		@media(min-width: 768px) {
+			font-size: get-rem(28);
+		}
+
+		@media(min-width: 1200px) {
+			font-size: get-vw(40);
+		}
+
+		@media(min-width: 1921px) {
+			font-size: get-rem(40);
+		}
+	}
+
+	&--white {
+		color: var(--color-white);
+	}
+}

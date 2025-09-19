@@ -1,0 +1,30 @@
+extends ../layout/base
+
+block variables
+
+    - var title='Starland';
+    - var description='Starland description';
+    - var pageClass='';
+block content
+    section.section.section--hero
+        .container.container--big
+            .hero-block
+                .hero-block__left
+                    .hero-block__top
+                        h4.title.title--nice-default.title--white Приватна гімназія
+                        p.title.title--simple.title--white м.Рівне, вул.Березова, буд.16
+                    h2.hero-title
+                        | Надихаємо #[span.hero-title__bg-blue #[span на знання]] #[span.hero-title__bg-green #[span Виховуємо]] лідерів&nbsp;
+                        img(src="content/images/icons/text-icons-triple.svg" width="152" height="61" alt="text-icon-triple")
+                        | Творимо&nbsp;
+                        img(src="content/images/icons/text-icons-double.svg" width="103" height="61" alt="text-icon-double")
+                        | майбутнє
+                    .hero-block__board
+                        |Відкриття заплановане на 1 вересня 2026 року
+                picture.hero-block__img
+                    source(media="(min-width:768px)" srcset="content/images/pics/students.webp")
+                    img(src="content/images/pics/students-mob.webp" alt="" width="713" height="683")
+
+block script
+
+
