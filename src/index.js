@@ -204,33 +204,33 @@ document.addEventListener('DOMContentLoaded', (event) => {
       color: startColor
     });
 
-    const tl = gsap.timeline({
+    const symbols = block.querySelectorAll(".js-animate-symbol");
+
+    gsap.set(symbols, {
+      display: "inline-block",
+      opacity: 0,
+      y: 30,
+      color: startColor
+    });
+
+    gsap.to(symbols, {
       scrollTrigger: {
         trigger: block,
-        start: "top 80%",
+        start: "top 85%",
+        end: "bottom 55%",
+        scrub: true,
         once: true
-      }
+      },
+      opacity: 1,
+      y: 0,
+      color: endColor,
+      stagger: {
+        each: 0.3,
+        from: "start"
+      },
+      ease: "power3.out"
     });
 
-    wordsEls.forEach((word) => {
-      const symbols = word.querySelectorAll(".js-animate-symbol");
-
-      tl.to(symbols, {
-        opacity: 1,
-        y: 0,
-        color: endColor,
-        stagger: 0.03,
-        duration: 0.03,
-        ease: "power3.out",
-        onComplete: () => {
-          // если слово находится внутри .title-block__bg
-          const bgParent = word.closest(".title-block__bg");
-          if (bgParent) {
-            bgParent.classList.add("showed");
-          }
-        }
-      }, ">");
-    });
 
   });
 
