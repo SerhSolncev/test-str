@@ -53,6 +53,11 @@
 		}
 	}
 
+	&--third {
+		font: bold #{get-rem(22)}/1 $mainFontExtra;
+		text-transform: uppercase;
+	}
+
 	&--white {
 		color: var(--color-white);
 	}
@@ -93,5 +98,9 @@
 
 	&--dark {
 		color: var(--color-dark);
+	}
+
+	&--white {
+		color: var(--color-white);
 	}
 }

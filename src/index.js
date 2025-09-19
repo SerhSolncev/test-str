@@ -154,17 +154,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const startColor = block.dataset.startColor || "#aaa";
     const endColor = block.dataset.endColor || "#000";
 
-    // Берём HTML, а не только текст
     const html = block.innerHTML.trim();
-    block.innerHTML = ""; // очищаем
+    block.innerHTML = "";
 
-    // Создаём временный контейнер для парсинга
     const temp = document.createElement("div");
     temp.innerHTML = html;
 
     function processNode(node, parent) {
       if (node.nodeType === Node.TEXT_NODE) {
-        // Разбиваем текст по словам
         const words = node.textContent.split(" ");
         words.forEach((word, wordIndex) => {
           if (!word) return;
@@ -173,7 +170,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
           wordSpan.classList.add("js-animated-word");
           parent.appendChild(wordSpan);
 
-          // Разбиваем слово на символы
           [...word].forEach(char => {
             const charSpan = document.createElement("span");
             charSpan.classList.add("js-animate-symbol");
@@ -181,13 +177,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
             wordSpan.appendChild(charSpan);
           });
 
-          // пробелы возвращаем
           if (wordIndex < words.length - 1) {
             parent.appendChild(document.createTextNode(" "));
           }
         });
       } else if (node.nodeType === Node.ELEMENT_NODE) {
-        // Сохраняем исходный span
+
         const clone = document.createElement(node.tagName.toLowerCase());
         [...node.attributes].forEach(attr => {
           clone.setAttribute(attr.name, attr.value);
@@ -198,12 +193,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
     }
 
-    // Обрабатываем все узлы
     temp.childNodes.forEach(node => processNode(node, block));
 
     const wordsEls = block.querySelectorAll(".js-animated-word");
 
-    // Стартовые стили для символов
     gsap.set(block.querySelectorAll(".js-animate-symbol"), {
       display: "inline-block",
       opacity: 0,
@@ -226,8 +219,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         opacity: 1,
         y: 0,
         color: endColor,
-        stagger: 0.05,
-        duration: 0.05,
+        stagger: 0.03,
+        duration: 0.03,
         ease: "power3.out",
         onComplete: () => {
           // если слово находится внутри .title-block__bg
