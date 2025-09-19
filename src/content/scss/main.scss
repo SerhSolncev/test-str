@@ -350,6 +350,12 @@
 
 	&__img-wrap {
 		align-self: stretch;
+		position: relative;
+		display: inline-block;
+		mask-image: url("../images/pics/test-mask.webp");
+		mask-repeat: no-repeat;
+		mask-position: center;
+		mask-size: cover;
 	}
 
 	&__img {
