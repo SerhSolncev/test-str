@@ -36,7 +36,32 @@
 		}
 	}
 
+	&--secondary-semi {
+		font: 400 #{get-rem(26)}/1 $mainFontSemi;
+
+		@media(min-width: 1200px) {
+			font-size: get-vw(40);
+		}
+
+		@media(min-width: 1921px) {
+			font-size: get-rem(40);
+		}
+
+		span {
+			font-family: $secondFont;
+			text-transform: lowercase;
+		}
+	}
+
 	&--white {
 		color: var(--color-white);
+	}
+
+	&--dark {
+		color: var(--color-dark);
+	}
+
+	&--ttu {
+		text-transform: uppercase;
 	}
 }

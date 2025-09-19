@@ -331,3 +331,22 @@
 		}
 	}
 }
+
+.second-block {
+	display: grid;
+	grid-template-columns: 1fr 1.2fr;
+	grid-gap: 40px;
+}
+
+.board-block {
+	padding: 60px;
+	border-radius: get-rem(60);
+
+	&--yellow {
+		background-color: var(--color-yellow);
+	}
+
+	&--green {
+		background-color: var(--color-green);
+	}
+}

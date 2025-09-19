@@ -5,14 +5,33 @@
 	position: relative;
 
 	&--hero {
+		margin: 0 0 get-rem(60);
 
-		@media(max-width: 991px) {
+		@media(min-width: 768px) {
 			overflow-x: hidden;
-			margin: get-rem(-33) 0 get-rem(80);
+			margin: get-rem(-33) 0 get-rem(60);
 		}
 
-		@media(max-width: 767px) {
-			margin: 0 0 get-rem(80);
+		@media(min-width: 992px) {
+			overflow: visible;
+			margin: 0 0 get-vw(120);
+		}
+
+		@media(min-width: 1921px) {
+			margin: 0 0 get-rem(120);
+		}
+	}
+
+	&--second {
+		margin: 0 0 get-rem(60);
+
+		@media(min-width: 992px) {
+			overflow: visible;
+			margin: 0 0 get-vw(120);
+		}
+
+		@media(min-width: 1921px) {
+			margin: 0 0 get-rem(120);
 		}
 	}
 }
