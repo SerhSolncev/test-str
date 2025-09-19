@@ -40,11 +40,11 @@
 		font: 400 #{get-rem(26)}/1 $mainFontSemi;
 
 		@media(min-width: 1200px) {
-			font-size: get-vw(40);
+			font-size: get-vw(55);
 		}
 
 		@media(min-width: 1921px) {
-			font-size: get-rem(40);
+			font-size: get-rem(55);
 		}
 
 		span {
@@ -63,5 +63,26 @@
 
 	&--ttu {
 		text-transform: uppercase;
+	}
+}
+
+
+.simple-text {
+
+	&--default {
+		font: 300 #{get-rem(14)}/1.6 $mainFont;
+		letter-spacing: 0.01em;
+
+		@media(min-width: 992px) {
+			font-size: get-vw(20);
+		}
+
+		@media(min-width: 1921px) {
+			font-size: get-rem(20);
+		}
+	}
+
+	&--dark {
+		color: var(--color-dark);
 	}
 }
