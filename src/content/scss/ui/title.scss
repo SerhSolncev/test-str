@@ -70,10 +70,19 @@
 .simple-text {
 
 	&--default {
-		font: 300 #{get-rem(14)}/1.6 $mainFont;
+		font: 300 #{get-rem(16)}/1.57 $mainFont;
 		letter-spacing: 0.01em;
 
-		@media(min-width: 992px) {
+		@media(min-width: 767px) {
+			font-size: get-rem(14);
+		}
+
+		@media(min-width: 1200px) {
+			font-size: get-rem(16);
+			line-height: 1.6;
+		}
+
+		@media(min-width: 1440px) {
 			font-size: get-vw(20);
 		}
 
