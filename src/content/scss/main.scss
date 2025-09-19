@@ -633,8 +633,61 @@
 }
 
 .value-board {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 	width: 100%;
 	border-radius: get-rem(40);
+	padding: 40px;
+
+	&__top {
+		width: 100%;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: get-rem(20);
+		height: get-vw(128);
+		margin: 0 0 60px;
+
+		@media(min-width: 1921px) {
+			height: get-rem(128);
+		}
+	}
+
+	&__images {
+		display: flex;
+		align-items: center;
+	}
+
+	&__img {
+		display: block;
+		width: get-vw(128);
+		height: get-vw(128);
+		border-radius: 100%;
+		overflow: hidden;
+
+		@media(min-width: 1921px) {
+			width: get-rem(128);
+			height: get-rem(128);
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__numb {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		width: get-rem(54);
+		height: get-rem(54);
+		background-color: var(--color-white);
+		border-radius: 100%;
+		font: bold #{get-rem(19)}/1 $mainFont;
+	}
 
 	&--long {
 		width: 48%;

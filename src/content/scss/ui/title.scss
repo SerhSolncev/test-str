@@ -54,7 +54,7 @@
 	}
 
 	&--third {
-		font: bold #{get-rem(22)}/1 $mainFontExtra;
+		font: bold #{get-rem(22)}/1.5 $mainFont;
 		text-transform: uppercase;
 	}
 
