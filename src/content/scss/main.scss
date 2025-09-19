@@ -279,11 +279,11 @@
 		transform: translateY(#{get-rem(6)}) translateX(#{get-rem(-3)});
 
 		@media(min-width: 768px) {
-			transform: translateY(#{get-rem(6)}) 0;
+			transform: translateY(#{get-rem(6)}) translateX(0);
 		}
 
 		@media(min-width: 768px) {
-			transform: translateY(#{get-vw(11)}) translateX(0);
+			transform: translateY(#{get-vw(11)}) translateX(#{get-rem(-3)});
 		}
 
 		@media(min-width: 1921px) {
