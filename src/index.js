@@ -213,6 +213,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
       color: startColor
     });
 
+    wordsEls.forEach((word) => {
+      gsap.to(word, {
+        opacity: 1,
+        y: 0,
+        color: endColor,
+        duration: 0.075,
+        ease: "power3.out",
+        onComplete: () => {
+          // если слово находится внутри .title-block__bg
+          const bgParent = word.closest(".title-block__bg");
+          if (bgParent) {
+            bgParent.classList.add("showed");
+          }
+        }
+      }, ">");
+    });
+
     gsap.to(symbols, {
       scrollTrigger: {
         trigger: block,
