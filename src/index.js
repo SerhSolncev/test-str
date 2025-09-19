@@ -242,7 +242,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 
 
-
   // навігація
 
   const header = document.querySelector('header');
