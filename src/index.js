@@ -4,6 +4,8 @@ import "./content/scss/main.scss";
 import Swiper from 'swiper';
 import { Navigation, Pagination} from 'swiper/modules';
 import LazyLoad from 'vanilla-lazyload'
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 document.addEventListener('DOMContentLoaded', (event) => {
   document.body.classList.add('loading');
@@ -104,6 +106,141 @@ document.addEventListener('DOMContentLoaded', (event) => {
     childList: true,
     subtree: true,
   });
+
+  // gsap
+
+  const showElementYX = document.querySelectorAll('.js-light-show');
+
+  if (showElementYX.length > 0) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    showElementYX.forEach((element) => {
+      const delay = parseFloat(element.dataset.delay) || 0.25;
+      const duration = parseFloat(element.dataset.duration) || 0.5;
+      const x = element.dataset.showX ? parseFloat(element.dataset.showX) || 0 : null;
+      const y = element.dataset.showY ? parseFloat(element.dataset.showY) || 0 : null;
+      const z = element.dataset.showZ ? parseFloat(element.dataset.showZ) || 0.9 : null;
+      const rotate = element.dataset.rotate ? parseFloat(element.dataset.rotate) || 0 : null;
+      const start = element.dataset.start || 'top 90%';
+      const end = element.dataset.end || 'top 50%';
+
+      const from = { opacity: 0 };
+      if (x !== null) from.x = x;
+      if (y !== null) from.y = y;
+      if (z !== null) from.scale = z;
+      if (rotate !== null) from.rotate = rotate;
+
+      const to = { opacity: 1, x: 0, y: 0, scale: 1, rotate: 0, duration: duration, delay: delay };
+
+      gsap.fromTo(
+        element,
+        from,
+        {
+          ...to,
+          scrollTrigger: {
+            trigger: element,
+            start: start,
+            end: end,
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+  }
+
+  const animatedBlocks = document.querySelectorAll(".js-animated-text");
+
+  animatedBlocks.forEach(block => {
+    const startColor = block.dataset.startColor || "#aaa";
+    const endColor = block.dataset.endColor || "#000";
+
+    // Берём HTML, а не только текст
+    const html = block.innerHTML.trim();
+    block.innerHTML = ""; // очищаем
+
+    // Создаём временный контейнер для парсинга
+    const temp = document.createElement("div");
+    temp.innerHTML = html;
+
+    function processNode(node, parent) {
+      if (node.nodeType === Node.TEXT_NODE) {
+        // Разбиваем текст по словам
+        const words = node.textContent.split(" ");
+        words.forEach((word, wordIndex) => {
+          if (!word) return;
+
+          const wordSpan = document.createElement("span");
+          wordSpan.classList.add("js-animated-word");
+          parent.appendChild(wordSpan);
+
+          // Разбиваем слово на символы
+          [...word].forEach(char => {
+            const charSpan = document.createElement("span");
+            charSpan.classList.add("js-animate-symbol");
+            charSpan.textContent = char;
+            wordSpan.appendChild(charSpan);
+          });
+
+          // пробелы возвращаем
+          if (wordIndex < words.length - 1) {
+            parent.appendChild(document.createTextNode(" "));
+          }
+        });
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        // Сохраняем исходный span
+        const clone = document.createElement(node.tagName.toLowerCase());
+        [...node.attributes].forEach(attr => {
+          clone.setAttribute(attr.name, attr.value);
+        });
+        parent.appendChild(clone);
+
+        node.childNodes.forEach(child => processNode(child, clone));
+      }
+    }
+
+    // Обрабатываем все узлы
+    temp.childNodes.forEach(node => processNode(node, block));
+
+    const wordsEls = block.querySelectorAll(".js-animated-word");
+
+    // Стартовые стили для символов
+    gsap.set(block.querySelectorAll(".js-animate-symbol"), {
+      display: "inline-block",
+      opacity: 0,
+      y: 30,
+      color: startColor
+    });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: block,
+        start: "top 80%",
+        once: true
+      }
+    });
+
+    wordsEls.forEach((word) => {
+      const symbols = word.querySelectorAll(".js-animate-symbol");
+
+      tl.to(symbols, {
+        opacity: 1,
+        y: 0,
+        color: endColor,
+        stagger: 0.05,
+        duration: 0.05,
+        ease: "power3.out",
+        onComplete: () => {
+          // если слово находится внутри .title-block__bg
+          const bgParent = word.closest(".title-block__bg");
+          if (bgParent) {
+            bgParent.classList.add("showed");
+          }
+        }
+      }, ">");
+    });
+
+  });
+
 
 
   // навігація

@@ -54,6 +54,7 @@
   "homepage": "https://github.com/abyss-soft/webpack-template-base_Pug#readme",
   "keywords": [],
   "dependencies": {
+    "gsap": "^3.13.0",
     "swiper": "^11.2.5",
     "vanilla-lazyload": "^19.1.3"
   }
