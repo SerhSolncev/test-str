@@ -167,6 +167,10 @@
 		}
 	}
 
+	&--def-always {
+		font: 300 #{get-rem(16)}/1.57 $mainFont;
+	}
+
 	&--dark {
 		color: var(--color-dark);
 	}
