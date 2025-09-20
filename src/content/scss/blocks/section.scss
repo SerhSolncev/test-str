@@ -36,8 +36,7 @@
 	}
 
 	&--bottom-sec {
-		width: calc(100% + #{get-rem(30)});
-		margin: 0 0 0 get-rem(-15);
+		width: 100%;
 		overflow-x: hidden;
 
 		@media(min-width: 1366px) {

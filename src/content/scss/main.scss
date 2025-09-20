@@ -1030,7 +1030,7 @@
 			gap: get-rem(40);
 		}
 
-		@media(min-width: 1200px) {
+		@media(min-width: 992px) {
 		    flex-direction: row;
 		}
 	}
@@ -1109,11 +1109,12 @@
 }
 
 .bottom-sec {
-	padding: get-rem(81) get-rem(30) get-rem(50) get-rem(27);
+	padding: get-rem(16) get-rem(21);
 	background-color: var(--color-purple-dark);
+	margin: get-rem(-1) 0 0;
 
 	@media(min-width: 640px) {
-		padding: get-rem(69) get-rem(39);
+		padding: get-rem(22) get-rem(30);
 	}
 
 	@media(min-width: 992px) {
@@ -1132,10 +1133,10 @@
 		align-items: center;
 		justify-content: space-between;
 		gap: get-rem(40);
-		margin: 0 0 get-rem(28);
+		margin: 0 0 get-rem(48);
 
 		@media(min-width: 768px) {
-			margin: 0 0 get-rem(32);
+			margin: 0 0 get-rem(71);
 		}
 
 		@media(min-width: 992px) {
@@ -1163,7 +1164,12 @@
 		}
 
 		.swiper-nav {
-			transform: translateY(#{get-rem(-19)});
+			padding: 0 get-rem(5) 0 0;
+
+			@media(min-width: 992px) {
+				padding: 0;
+				transform: translateY(#{get-rem(-19)});
+			}
 		}
 	}
 
@@ -1176,13 +1182,21 @@
 .swiper-nav {
 	display: flex;
 	align-items: center;
-	gap: get-rem(16);
+	gap: get-rem(8);
+
+	@media(min-width: 768px) {
+		gap: get-rem(16);
+	}
 }
 
 .slide-item {
 	display: block;
 	width: 100%;
-	border-radius: get-rem(40);
+	border-radius: get-rem(24);
+
+	@media(min-width: 992px) {
+		border-radius: get-rem(40);
+	}
 
 	&::after {
 		content: '';
@@ -1239,11 +1253,16 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: get-rem(56);
-	height: get-rem(56);
+	width: get-rem(32);
+	height: get-rem(32);
 	border-radius: 100%;
 	background-color: var(--color-blue);
 	transition: background-color 0.15s ease-in;
+
+	@media(min-width: 768px) {
+		width: get-rem(56);
+		height: get-rem(56);
+	}
 
 	.swiper-lock {
 		opacity: 0.2;

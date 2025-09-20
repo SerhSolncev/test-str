@@ -86,12 +86,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
         0: {
           slidesPerView: 1.6,
           slidesPerGroup: 1,
+          spaceBetween: 40
         },
         768: {
-          slidesPerView: 2.4,
+          slidesPerView: 2.52,
           slidesPerGroup: 1,
+          spaceBetween: 40
         },
         992: {
+          slidesPerView: 2.5,
+          slidesPerGroup: 1,
+          spaceBetween: 60,
+        },
+        1200: {
           slidesPerView: 2.5,
           slidesPerGroup: 1,
           spaceBetween: 92,
