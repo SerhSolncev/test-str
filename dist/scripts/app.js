@@ -20,7 +20,7 @@ return /******/ (() => { // webpackBootstrap
     if(true) {
       (function() {
         var localsJsonString = undefined;
-        // 1758405854158
+        // 1758406107403
         var cssReload = __webpack_require__(140)(module.id, {});
         // only invalidate when locals change
         if (
@@ -308,7 +308,7 @@ module.exports = function (moduleId, options) {
     if(true) {
       (function() {
         var localsJsonString = undefined;
-        // 1758405854073
+        // 1758406107317
         var cssReload = __webpack_require__(140)(module.id, {});
         // only invalidate when locals change
         if (
@@ -19438,7 +19438,7 @@ document.addEventListener('DOMContentLoaded', event => {
   document.body.classList.add('loading');
   setTimeout(() => {
     document.body.classList.add('loaded');
-  }, 200);
+  }, 400);
 
   // "modernizr" func"
   function isTouchDevice() {
@@ -19887,7 +19887,7 @@ module.exports = function (urlString) {
     if(true) {
       (function() {
         var localsJsonString = undefined;
-        // 1758405854046
+        // 1758406107273
         var cssReload = __webpack_require__(140)(module.id, {});
         // only invalidate when locals change
         if (
@@ -20003,7 +20003,7 @@ module.exports = function (urlString) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("8e60d00cd3f11097eb6a")
+/******/ 		__webpack_require__.h = () => ("afef381445f0779d01e4")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
