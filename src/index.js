@@ -278,9 +278,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // навігація
 
-  const header = document.querySelector('.js-fixed-header');
+  const headerFixed = document.querySelector('.js-fixed-header');
   const mobMenu = document.querySelector('.mobile-menu');
-  let headerHeight = header.offsetHeight;
+  let headerFixedHeight = headerFixed.offsetHeight;
 
   document.querySelectorAll('.js-nav-anchor').forEach(link => {
     link.addEventListener('click', function (event) {
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         } else {
           setTimeout(() => {
             window.scrollTo({
-              top: target.offsetTop - 40,
+              top: target.offsetTop - headerFixedHeight - 40,
               behavior: 'smooth'
             });
           }, 50);
@@ -338,6 +338,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 
   document.querySelectorAll('.js-anchor-block').forEach(anchor => resizeObserver.observe(anchor));
+
+  const header = document.querySelector('.js-header');
+  let headerHeight = header.offsetHeight;
+
+  window.addEventListener('scroll', function () {
+
+    if (window.scrollY > headerHeight) {
+      headerFixed.classList.add('onscroll');
+    } else {
+      headerFixed.classList.remove('onscroll');
+    }
+  });
 
   // lightbox
   let lightbox;
