@@ -150,6 +150,23 @@
 		}
 	}
 
+	&--third {
+		font: 300 #{get-rem(16)}/1.57 $mainFont;
+		letter-spacing: 0.01em;
+
+		@media(min-width: 992px) {
+			font-size: get-rem(18);
+		}
+
+		@media(min-width: 1440px) {
+			font-size: get-vw(22);
+		}
+
+		@media(min-width: 1921px) {
+			font-size: get-rem(22);
+		}
+	}
+
 	&--dark {
 		color: var(--color-dark);
 	}

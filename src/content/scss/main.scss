@@ -738,50 +738,6 @@
 		}
 	}
 
-	&__body {
-		display: flex;
-		flex-direction: column;
-		padding: 0 get-rem(29) 0 0;
-		gap: get-rem(15);
-
-		@media(min-width: 768px) {
-			padding: 0 get-rem(48) 0 get-rem(12);
-		}
-
-		@media(min-width: 992px) {
-			gap: get-vw(17);
-			padding: 0 get-vw(29) 0 get-vw(13);
-		}
-
-		@media(min-width: 1921px) {
-			gap: get-rem(17);
-			padding: 0 get-rem(29) 0 get-rem(13);
-		}
-
-		.value-board--short & {
-			padding: 0 0 get-rem(13);
-
-			@media(min-width: 768px) {
-				padding: 0 get-rem(12);
-			}
-
-			@media(min-width: 992px) {
-				padding: 0 get-vw(13);
-			}
-
-			@media(min-width: 1921px) {
-				padding: 0 get-rem(13);
-			}
-		}
-
-		@media(max-width: 767px) {
-			br {
-				display: none;
-			}
-
-		}
-	}
-
 	&__img {
 		display: block;
 		width: get-rem(97);
@@ -826,6 +782,50 @@
 		img {
 			width: 100%;
 			height: 100%;
+		}
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		padding: 0 get-rem(29) 0 0;
+		gap: get-rem(15);
+
+		@media(min-width: 768px) {
+			padding: 0 get-rem(48) 0 get-rem(12);
+		}
+
+		@media(min-width: 992px) {
+			gap: get-vw(17);
+			padding: 0 get-vw(29) 0 get-vw(13);
+		}
+
+		@media(min-width: 1921px) {
+			gap: get-rem(17);
+			padding: 0 get-rem(29) 0 get-rem(13);
+		}
+
+		.value-board--short & {
+			padding: 0 0 get-rem(13);
+
+			@media(min-width: 768px) {
+				padding: 0 get-rem(12);
+			}
+
+			@media(min-width: 992px) {
+				padding: 0 get-vw(13);
+			}
+
+			@media(min-width: 1921px) {
+				padding: 0 get-rem(13);
+			}
+		}
+
+		@media(max-width: 767px) {
+			br {
+				display: none;
+			}
+
 		}
 	}
 
@@ -932,21 +932,6 @@
 	}
 }
 
-.bottom-block {
-	mask-image: url("../images/pics/blue-mask.png");
-	mask-repeat: no-repeat;
-	mask-position: top;
-	mask-size: 100% auto;
-
-	@media(min-width: 768px) {
-		mask-image: url("../images/pics/blue-mask.png");
-	}
-
-	@media(min-width: 992px) {
-		mask-image: url("../images/pics/blue-mask.webp");
-	}
-}
-
 .title-sec {
 	font: bold 5.05vw/1.57 $mainFont;
 	text-transform: uppercase;
@@ -1031,4 +1016,93 @@
 	padding: 54px;
 	background-color: var(--color-purple-dark);
 	border-radius: get-rem(54);
+	mask-image: url("../images/pics/blue-mask.png");
+	mask-repeat: no-repeat;
+	mask-position: top;
+	mask-size: 100% auto;
+
+	@media(min-width: 768px) {
+		mask-image: url("../images/pics/blue-mask.png");
+	}
+
+	@media(min-width: 992px) {
+		mask-image: url("../images/pics/blue-mask.webp");
+	}
+
+	&__top {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 40px;
+		padding: 0 0 80px;
+	}
+
+	&__right {
+		width: 100%;
+		max-width: get-vw(468);
+		align-self: flex-end;
+		display: flex;
+		flex-direction: column;
+		gap: 60px;
+
+		@media(min-width: 1921px) {
+			max-width: get-rem(468);
+		}
+	}
+
+	&__images {
+		display: flex;
+		align-items: center;
+	}
+
+	&__img {
+		display: block;
+		width: get-rem(97);
+		height: get-rem(97);
+		border-radius: 100%;
+		overflow: hidden;
+		z-index: var(--i);
+
+		@media(min-width: 768px) {
+			width: get-rem(128);
+			height: get-rem(133);
+		}
+
+		@media(min-width: 992px) {
+			width: get-vw(128);
+			height: get-vw(133);
+		}
+
+		@media(min-width: 1921px) {
+			width: get-rem(128);
+			height: get-rem(133);
+		}
+
+		&:nth-child(1) { z-index: 4; }
+		&:nth-child(2) { z-index: 3; }
+		&:nth-child(3) { z-index: 2; }
+		&:nth-child(4) { z-index: 1; }
+		&:nth-child(5) { z-index: 0; }
+
+		&:not(:last-child) {
+			margin: 0 get-rem(-42) 0 0;
+			@media(min-width: 768px) {
+				margin: 0 get-rem(-51) 0 0;
+			}
+
+			@media(min-width: 992px) {
+				margin: 0 get-vw(-51) 0 0;
+			}
+
+			@media(min-width: 1921px) {
+				margin: 0 get-rem(-51) 0 0;
+			}
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
 }
