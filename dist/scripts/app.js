@@ -20,7 +20,7 @@ return /******/ (() => { // webpackBootstrap
     if(true) {
       (function() {
         var localsJsonString = undefined;
-        // 1758378862722
+        // 1758379847753
         var cssReload = __webpack_require__(140)(module.id, {});
         // only invalidate when locals change
         if (
@@ -308,7 +308,7 @@ module.exports = function (moduleId, options) {
     if(true) {
       (function() {
         var localsJsonString = undefined;
-        // 1758378862640
+        // 1758379847675
         var cssReload = __webpack_require__(140)(module.id, {});
         // only invalidate when locals change
         if (
@@ -19500,13 +19500,20 @@ document.addEventListener('DOMContentLoaded', event => {
       breakpoints: {
         0: {
           slidesPerView: 1.6,
-          slidesPerGroup: 1
+          slidesPerGroup: 1,
+          spaceBetween: 40
         },
         768: {
-          slidesPerView: 2.4,
-          slidesPerGroup: 1
+          slidesPerView: 2.52,
+          slidesPerGroup: 1,
+          spaceBetween: 40
         },
         992: {
+          slidesPerView: 2.5,
+          slidesPerGroup: 1,
+          spaceBetween: 60
+        },
+        1200: {
           slidesPerView: 2.5,
           slidesPerGroup: 1,
           spaceBetween: 92
@@ -19810,7 +19817,7 @@ module.exports = function (urlString) {
     if(true) {
       (function() {
         var localsJsonString = undefined;
-        // 1758378862616
+        // 1758379847615
         var cssReload = __webpack_require__(140)(module.id, {});
         // only invalidate when locals change
         if (
@@ -19926,7 +19933,7 @@ module.exports = function (urlString) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("894c80caa753cb884d46")
+/******/ 		__webpack_require__.h = () => ("22c5d5db545b7564eea6")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
