@@ -175,3 +175,52 @@
 		color: var(--color-white);
 	}
 }
+
+.dc-bottom {
+
+	&--blue {
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: get-vw(16);
+			left: get-rem(2);
+			z-index: 1;
+			display: block;
+			width: 110%;
+			height: get-rem(12);
+			background-image: url(../images/icons/purple-line.svg);
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+
+			@media(min-width: 1921px) {
+				height: get-rem(12);
+				bottom: get-rem(16);
+			}
+		}
+	}
+
+	&--green {
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: get-vw(16);
+			left: get-rem(2);
+			z-index: 1;
+			display: block;
+			width: 110%;
+			height: get-rem(12);
+			background-image: url(../images/icons/text-green2.svg);
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+
+			@media(min-width: 1921px) {
+				height: get-rem(12);
+				bottom: get-rem(16);
+			}
+		}
+	}
+}
