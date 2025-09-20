@@ -53,6 +53,43 @@
 		}
 	}
 
+	&--section-semi {
+		font: 400 #{get-rem(36)}/1 $mainFontSemi;
+
+		span {
+			font-size: get-rem(36);
+		}
+
+		@media(min-width: 768px) {
+			font-size: get-rem(46);
+
+			span {
+				font-size: get-rem(36);
+			}
+		}
+
+		@media(min-width: 992px) {
+			font-size: get-vw(55);
+
+			span {
+				font-size: get-vw(55);
+			}
+		}
+
+		@media(min-width: 1921px) {
+			font-size: get-rem(55);
+
+			span {
+				font-size: get-rem(55);
+			}
+		}
+
+		span {
+			font-family: $secondFont;
+			text-transform: lowercase;
+		}
+	}
+
 	&--third {
 		font: bold #{get-rem(22)}/1.5 $mainFont;
 		text-transform: uppercase;

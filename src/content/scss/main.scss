@@ -472,7 +472,7 @@
 
 
 .title-block {
-	font: bold 5.05vw/1.57 $mainFont;
+	font: bold 5.05vw/1.6 $mainFont;
 	text-transform: uppercase;
 
 	@media(min-width: 768px) {
@@ -578,21 +578,33 @@
 }
 
 .values-block {
-	padding: get-vw(15) 0 0;
+	padding: 0;
+
+	@media(min-width: 768px) {
+		padding: get-rem(20) 0 0;
+	}
+
+	@media(min-width: 992px) {
+		padding: get-vw(15) 0 0;
+	}
 
 	@media(min-width: 1921px) {
 		padding: get-rem(15) 0 0;
 	}
 
 	&__top {
-		margin: 0 0 get-vw(47);
+		margin: 0 0 get-rem(32);
+
+		@media(min-width: 992px) {
+			margin: 0 0 get-vw(47);
+		}
 
 		@media(min-width: 1921px) {
 			margin: 0 0 get-rem(47);
 		}
 
 		span {
-			margin: 0 0 0 get-rem(10);
+			margin: 0 0 0 get-rem(19);
 			position: relative;
 
 			@media(min-width: 992px) {
