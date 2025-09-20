@@ -78,10 +78,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         prevEl: el.querySelector('.js-prev-swiper'),
         disabledClass: 'swiper-lock'
       },
-      pagination: {
-        el: el.querySelector('.swiper-pagination'),
-        clickable: true
-      },
+      // pagination: {
+      //   el: el.querySelector('.swiper-pagination'),
+      //   clickable: true
+      // },
       breakpoints: {
         0: {
           slidesPerView: 1.6,
