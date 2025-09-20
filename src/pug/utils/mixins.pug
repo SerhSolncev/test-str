@@ -14,15 +14,15 @@ mixin header()
                 | На Щасливому
         .header__body
             .header__body-top
-                button.burger-btn.js-light-show(data-show-x="-15" data-delay="0.2")
+                button.burger-btn.js-light-show.js-toggle-open(data-show-x="-15" data-delay="0.2" data-id="menu")
                     svg(width='17' height='11' viewbox='0 0 17 11' fill='none' xmlns='http://www.w3.org/2000/svg')
                         path(d='M16.4434 0.222656V1.22266H0.554688V0.222656H16.4434Z' fill='#7165CF')
                         path(d='M16.4434 5.11328V6.11328H0.554688V5.11328H16.4434Z' fill='#7165CF')
                         path(d='M16.4434 10V11H0.554688V10H16.4434Z' fill='#7165CF')
                 nav.header__nav.js-light-show(data-show-x="-15" data-delay="0.4")
-                    a.simple-link.simple-link--decor-white.js-nav-anchor.is-current(href="#about") Про нас
-                    a.simple-link.simple-link--decor-white.js-nav-anchor(href="#services") Цінності
-                    a.simple-link.simple-link--decor-white.js-nav-anchor(href="#contacts") Освітній простір
+                    a.simple-link.simple-link--decor-white.js-nav-anchor.is-current(href="#top") Про нас
+                    a.simple-link.simple-link--decor-white.js-nav-anchor(href="#values") Цінності
+                    a.simple-link.simple-link--decor-white.js-nav-anchor(href="#grad") Освітній простір
                 .phone-board.js-light-show(data-show-x="15" data-delay="0.3")
                     .phone-board__icon
                         svg(width='40' height='39' viewbox='0 0 40 39' fill='none' xmlns='http://www.w3.org/2000/svg')
@@ -34,4 +34,16 @@ mixin header()
                         a.simple-link.simple-link--white(href="tel:0730680630") 073 068 06 30
                         a.simple-link.simple-link--white(href="tel:0980680630") 098 068 06 30
             .header__body-bottom
-
+    nav.mobile-menu.js-toggle-block(data-id="menu")
+        .mobile-menu__top
+            picture.logo.logo--footer
+                img(src="content/images/empty.gif" data-src="content/images/icons/logo-footer.svg" alt="" width="158" height="79" class="lazy")
+            button.close-btn.js-toggle-close
+                svg(width='20' height='20' viewbox='0 0 20 20' xmlns='http://www.w3.org/2000/svg')
+                    path(d='M10.0754 8.88827L14.2315 4.73218L15.4187 5.91939L11.2626 10.0755L15.4187 14.2316L14.2315 15.4188L10.0754 11.2627L5.91927 15.4188L4.73206 14.2316L8.88815 10.0755L4.73206 5.91939L5.91927 4.73218L10.0754 8.88827Z')
+        .mobile-menu__list
+            a.simple-link.simple-link--decor-white.js-nav-anchor.is-current(href="#top") Про нас
+            a.simple-link.simple-link--decor-white.js-nav-anchor(href="#values") Цінності
+            a.simple-link.simple-link--decor-white.js-nav-anchor(href="#grad") Освітній простір
+    nav.js-fixed-header
+        |
