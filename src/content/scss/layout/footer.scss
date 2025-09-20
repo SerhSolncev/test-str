@@ -5,37 +5,67 @@
 
 	&__top {
 		display: grid;
-		grid-template-columns: 1fr 2fr 1fr;
-	}
+		grid-template-columns: 1fr;
 
-	&__body {
-		display: flex;
-		flex-direction: column;
-		gap: get-rem(37);
+		@media(min-width: 768px) {
+			grid-template-columns: 1fr 1.5fr 1fr;
+		}
+
+		@media(min-width: 992px) {
+			grid-template-columns: 1fr 2fr 1fr;
+		}
 	}
 
 	&__bottom {
 		display: flex;
 		justify-content: space-between;
+		flex-direction: column;
 		gap: get-rem(20);
+		text-align: center;
+
+		@media(min-width: 992px) {
+		    flex-direction: row;
+			text-align: initial;
+		}
+
+		.simple-text {
+			@media(min-width: 992px) and (max-width: 1200px) {
+				font-size: get-rem(15);
+			}
+		}
 	}
 
 	&__logos {
 		display: flex;
 		align-items: center;
 		gap: get-rem(54);
+
+		@media(max-width: 991px) {
+		    grid-column: 1/3;
+			justify-content: center;
+			margin: 0 0 get-rem(37);
+		}
+
+		@media(max-width: 700px) {
+			grid-column: initial;
+			margin: 0 0 get-rem(29);
+		}
 	}
 
 	&__nav {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		gap: get-rem(19);
+		gap: get-rem(51);
 
+		@media(min-width: 701px) {
+			justify-content: flex-start;
+		}
 
-		@media(min-width: 1320px) {
-			gap: get-vw(76);
+		@media(min-width: 992px) {
+			justify-content: center;
 			transform: translateX(5.2%);
+			gap: get-vw(76);
 		}
 
 		@media(min-width: 1921px) {
@@ -46,16 +76,46 @@
 	.phone-board {
 		margin-left: auto;
 		gap: get-rem(28);
+
+		@media(max-width: 991px) {
+			gap: get-rem(20);
+		}
+
+		@media(max-width: 700px) {
+			margin: get-rem(38) auto 0;
+		}
+
+		&__icon {
+			@media(max-width: 991px) {
+			    width: get-rem(40);
+			    height: get-rem(40);
+			}
+		}
+
+		.simple-link {
+
+			@media(max-width: 991px) {
+			    font-size: get-rem(18);
+			}
+		}
 	}
 
 	&__body {
+		display: flex;
+		flex-direction: column;
+		gap: get-rem(26);
 		background-color: var(--color-purple-dark);
-		border-radius: 0 0 get-rem(54) get-rem(54);
-		padding: get-rem(16) get-rem(21);
+		border-radius: 0 0 get-rem(24) get-rem(24);
+		padding: get-rem(43) get-rem(21) get-rem(66);
 		margin: get-rem(-1) 0 0;
 
 		@media(min-width: 640px) {
-			padding: get-rem(22) get-rem(30);
+			padding: get-rem(53) get-rem(33);
+			gap: get-rem(37);
+		}
+
+		@media(min-width: 768px) {
+			border-radius: 0 0 get-rem(54) get-rem(54);
 		}
 
 		@media(min-width: 992px) {

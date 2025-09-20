@@ -188,7 +188,7 @@
 		&::after {
 			content: "";
 			position: absolute;
-			bottom: get-vw(16);
+			bottom: get-rem(5);
 			left: get-rem(2);
 			z-index: 1;
 			display: block;
@@ -197,6 +197,10 @@
 			background-image: url(../images/icons/purple-line.svg);
 			background-size: 100% 100%;
 			background-repeat: no-repeat;
+
+			@media(min-width: 992px) {
+				bottom: get-vw(16);
+			}
 
 			@media(min-width: 1921px) {
 				height: get-rem(12);
@@ -211,7 +215,7 @@
 		&::after {
 			content: "";
 			position: absolute;
-			bottom: get-vw(16);
+			bottom: get-rem(5);
 			left: get-rem(2);
 			z-index: 1;
 			display: block;
@@ -220,6 +224,10 @@
 			background-image: url(../images/icons/text-green2.svg);
 			background-size: 100% 100%;
 			background-repeat: no-repeat;
+
+			@media(min-width: 992px) {
+				bottom: get-vw(16);
+			}
 
 			@media(min-width: 1921px) {
 				height: get-rem(12);
