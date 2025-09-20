@@ -628,7 +628,11 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		gap: get-vw(60) 0;
+		gap: get-vw(36) 0;
+
+		@media(min-width: 1440px) {
+			gap: get-vw(60) 0;
+		}
 
 		@media(min-width: 1921px) {
 			gap: get-rem(60) 0;
@@ -644,17 +648,33 @@
 	border-radius: get-rem(40);
 	padding: get-rem(22) get-rem(23) get-rem(34) get-rem(24);
 
+	@media(min-width: 992px) {
+		border-radius: get-vw(40);
+		padding: get-vw(22) get-vw(23) get-vw(34) get-vw(24);
+	}
+
+	@media(min-width: 1921px) {
+		border-radius: get-rem(40);
+		padding: get-rem(22) get-rem(23) get-rem(34) get-rem(24);
+	}
+
 	&__top {
 		width: 100%;
 		display: flex;
 		align-items: flex-start;
 		justify-content: space-between;
 		gap: get-rem(20);
-		height: get-vw(128);
+		height: get-rem(128);
 		margin: 0 0 get-rem(33);
+
+		@media(min-width: 992px) {
+			height: get-vw(128);
+			margin: 0 0 get-vw(33);
+		}
 
 		@media(min-width: 1921px) {
 			height: get-rem(128);
+			margin: 0 0 get-rem(33);
 		}
 	}
 
@@ -671,22 +691,36 @@
 	&__body {
 		display: flex;
 		flex-direction: column;
-		gap: get-rem(17);
-		padding: 0 get-rem(29) 0 get-rem(13);
+		gap: get-vw(17);
+		padding: 0 get-vw(29) 0 get-vw(13);
+
+		@media(min-width: 1921px) {
+			gap: get-rem(17);
+			padding: 0 get-rem(29) 0 get-rem(13);
+		}
 
 		.value-board--short & {
-			padding: 0 get-rem(13) 0 get-rem(13);
+			padding: 0 get-vw(13);
+
+			@media(min-width: 1921px) {
+				padding: 0 get-rem(13);
+			}
 		}
 	}
 
 	&__img {
 		display: block;
-		width: get-vw(128);
-		height: get-vw(128);
+		width: get-rem(128);
+		height: get-rem(128);
 		border-radius: 100%;
 		overflow: hidden;
 		position: relative;
 		z-index: 1;
+
+		@media(min-width: 992px) {
+			width: get-vw(128);
+			height: get-vw(128);
+		}
 
 		@media(min-width: 1921px) {
 			width: get-rem(128);
@@ -721,11 +755,23 @@
 	}
 
 	&--long {
-		width: 48%;
+		width: 100%;
+
+		@media(min-width: 992px) {
+			width: 48%;
+		}
 	}
 
 	&--short {
-		width: 22%;
+		width: 48%;
+
+		@media(min-width: 992px) {
+			width: 24%;
+		}
+
+		@media(min-width: 1440px) {
+			width: 22%;
+		}
 	}
 
 	&--purple {
@@ -751,10 +797,21 @@
 
 .value-pic {
 	display: block;
-	width: 48%;
+	width: 100%;
 	align-self: stretch;
 	border-radius: get-rem(40);
 	overflow: hidden;
+	order: 10;
+
+	@media(min-width: 992px) {
+		width: 48%;
+		order: initial;
+		border-radius: get-vw(40);
+	}
+
+	@media(min-width: 1921px) {
+		border-radius: get-rem(40);
+	}
 
 	img {
 		width: 100%;
