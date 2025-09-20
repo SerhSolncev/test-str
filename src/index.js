@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         opacity: 1,
         y: 0,
         color: endColor,
-        duration: 0.2,
+        duration: 0.1,
         ease: "power3.out",
         onComplete: () => {
           // если слово находится внутри .title-block__bg
