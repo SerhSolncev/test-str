@@ -585,7 +585,11 @@
 	}
 
 	&__top {
-		margin: 0 0 60px;
+		margin: 0 0 get-vw(47);
+
+		@media(min-width: 1921px) {
+			margin: 0 0 get-rem(47);
+		}
 
 		span {
 			margin: 0 0 0 get-rem(10);
@@ -638,7 +642,7 @@
 	align-items: flex-start;
 	width: 100%;
 	border-radius: get-rem(40);
-	padding: 40px;
+	padding: get-rem(22) get-rem(23) get-rem(34) get-rem(24);
 
 	&__top {
 		width: 100%;
@@ -647,7 +651,7 @@
 		justify-content: space-between;
 		gap: get-rem(20);
 		height: get-vw(128);
-		margin: 0 0 60px;
+		margin: 0 0 get-rem(33);
 
 		@media(min-width: 1921px) {
 			height: get-rem(128);
@@ -657,6 +661,22 @@
 	&__images {
 		display: flex;
 		align-items: center;
+		margin: get-vw(5) get-vw(25) 0 0;
+
+		@media(min-width: 1921px) {
+			margin: get-rem(5) get-rem(25) 0 0;
+		}
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		gap: get-rem(17);
+		padding: 0 get-rem(29) 0 get-rem(13);
+
+		.value-board--short & {
+			padding: 0 get-rem(13) 0 get-rem(13);
+		}
 	}
 
 	&__img {
@@ -665,10 +685,21 @@
 		height: get-vw(128);
 		border-radius: 100%;
 		overflow: hidden;
+		position: relative;
+		z-index: 1;
 
 		@media(min-width: 1921px) {
 			width: get-rem(128);
 			height: get-rem(128);
+		}
+
+		&:not(:last-child) {
+			margin: 0 get-vw(-51) 0 0;
+			z-index: 2;
+
+			@media(min-width: 1921px) {
+				margin: 0 get-rem(-51) 0 0;
+			}
 		}
 
 		img {
