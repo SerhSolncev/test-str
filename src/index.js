@@ -153,6 +153,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   animatedBlocks.forEach(block => {
     const startColor = block.dataset.startColor || "#aaa";
     const endColor = block.dataset.endColor || "#000";
+    const start = block.dataset.start || "top 85%";
+    const end = block.dataset.end || "bottom 55%";
 
     const html = block.innerHTML.trim();
     block.innerHTML = "";
@@ -233,8 +235,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     gsap.to(symbols, {
       scrollTrigger: {
         trigger: block,
-        start: "top 85%",
-        end: "bottom 55%",
+        start: start,
+        end: end,
         scrub: true,
         once: true
       },
