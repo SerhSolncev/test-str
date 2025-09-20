@@ -20,7 +20,7 @@ return /******/ (() => { // webpackBootstrap
     if(true) {
       (function() {
         var localsJsonString = undefined;
-        // 1758379847753
+        // 1758385502627
         var cssReload = __webpack_require__(140)(module.id, {});
         // only invalidate when locals change
         if (
@@ -308,7 +308,7 @@ module.exports = function (moduleId, options) {
     if(true) {
       (function() {
         var localsJsonString = undefined;
-        // 1758379847675
+        // 1758385502539
         var cssReload = __webpack_require__(140)(module.id, {});
         // only invalidate when locals change
         if (
@@ -19438,7 +19438,7 @@ document.addEventListener('DOMContentLoaded', event => {
   document.body.classList.add('loading');
   setTimeout(() => {
     document.body.classList.add('loaded');
-  }, 500);
+  }, 200);
 
   // "modernizr" func"
   function isTouchDevice() {
@@ -19669,13 +19669,13 @@ document.addEventListener('DOMContentLoaded', event => {
 
   // навігація
 
-  const header = document.querySelector('header');
-  // let headerHeight = header.offsetHeight;
-
+  const headerFixed = document.querySelector('.js-fixed-header');
+  const mobMenu = document.querySelector('.mobile-menu');
+  let headerFixedHeight = headerFixed.offsetHeight;
   document.querySelectorAll('.js-nav-anchor').forEach(link => {
     link.addEventListener('click', function (event) {
       event.preventDefault();
-      // mobMenu.classList.remove('show');
+      mobMenu.classList.remove('is-open');
       document.body.classList.remove('overflow-hidden');
       const currentHref = this.getAttribute('href');
       document.querySelectorAll('.js-nav-anchor').forEach(btn => {
@@ -19695,7 +19695,7 @@ document.addEventListener('DOMContentLoaded', event => {
         } else {
           setTimeout(() => {
             window.scrollTo({
-              top: target.offsetTop - 40,
+              top: target.offsetTop - headerFixedHeight - 40,
               behavior: 'smooth'
             });
           }, 50);
@@ -19724,6 +19724,15 @@ document.addEventListener('DOMContentLoaded', event => {
     });
   });
   document.querySelectorAll('.js-anchor-block').forEach(anchor => resizeObserver.observe(anchor));
+  const header = document.querySelector('.js-header');
+  let headerHeight = header.offsetHeight;
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > headerHeight) {
+      headerFixed.classList.add('onscroll');
+    } else {
+      headerFixed.classList.remove('onscroll');
+    }
+  });
 
   // lightbox
   let lightbox;
@@ -19757,6 +19766,67 @@ document.addEventListener('DOMContentLoaded', event => {
   observerLightBox.observe(document.body, {
     childList: true,
     subtree: true
+  });
+
+  // menu
+
+  const toggleButtons = document.querySelectorAll('.js-toggle-open');
+  const toggleBlocks = document.querySelectorAll('.js-toggle-block');
+  const backButtons = document.querySelectorAll('.js-toggle-back');
+  toggleButtons.forEach(button => {
+    button.addEventListener('click', e => {
+      e.stopPropagation();
+      const id = button.dataset.id;
+      const targetBlock = document.querySelector(`.js-toggle-block[data-id="${id}"]`);
+      const backButton = document.querySelector(`.js-toggle-back[data-id="${id}"]`);
+      if (!targetBlock) return;
+      const isOpen = targetBlock.classList.contains('is-open');
+      toggleBlocks.forEach(block => block.classList.remove('is-open'));
+      backButtons.forEach(back => back.classList.remove('show'));
+      if (!isOpen) {
+        targetBlock.classList.add('is-open');
+        if (backButton) backButton.classList.add('show');
+      }
+      if (backButton) {
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+  toggleBlocks.forEach(block => {
+    const closeBtns = block.querySelectorAll('.js-toggle-close');
+    if (closeBtns.length) {
+      closeBtns.forEach(close => {
+        close.addEventListener('click', e => {
+          e.stopPropagation();
+          block.classList.remove('is-open');
+          const id = block.dataset.id;
+          const backButton = document.querySelector(`.js-toggle-back[data-id="${id}"]`);
+          if (backButton) backButton.classList.remove('show');
+          document.body.style.overflow = '';
+        });
+      });
+    }
+  });
+  backButtons.forEach(back => {
+    back.addEventListener('click', e => {
+      e.stopPropagation();
+      const id = back.dataset.id;
+      const targetBlock = document.querySelector(`.js-toggle-block[data-id="${id}"]`);
+      if (targetBlock) targetBlock.classList.remove('is-open');
+      back.classList.remove('show');
+      document.body.style.overflow = '';
+    });
+  });
+  document.addEventListener('click', e => {
+    toggleBlocks.forEach(block => {
+      if (!block.contains(e.target)) {
+        block.classList.remove('is-open');
+        const id = block.dataset.id;
+        const backButton = document.querySelector(`.js-toggle-back[data-id="${id}"]`);
+        if (backButton) backButton.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+    });
   });
 });
 
@@ -19817,7 +19887,7 @@ module.exports = function (urlString) {
     if(true) {
       (function() {
         var localsJsonString = undefined;
-        // 1758379847615
+        // 1758385502491
         var cssReload = __webpack_require__(140)(module.id, {});
         // only invalidate when locals change
         if (
@@ -19933,7 +20003,7 @@ module.exports = function (urlString) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("22c5d5db545b7564eea6")
+/******/ 		__webpack_require__.h = () => ("30a0b394aac8876c38e9")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
