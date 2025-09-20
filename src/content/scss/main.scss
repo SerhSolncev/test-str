@@ -207,6 +207,12 @@
 				transform: none;
 			}
 		}
+
+		@media(max-width: 761px) {
+			opacity: 1 !important;
+			transform: none !important;
+		}
+
 	}
 }
 
