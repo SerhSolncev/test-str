@@ -34,5 +34,23 @@
 			margin: 0 0 get-rem(120);
 		}
 	}
+
+	&--bottom-sec {
+		width: calc(100% + #{get-rem(30)});
+		margin: 0 0 0 get-rem(-15);
+		overflow-x: hidden;
+
+		@media(min-width: 1366px) {
+			width: calc(100% + #{get-vw(112)});
+			margin: 0 0 0 get-vw(-56);
+			padding: 0 get-vw(56) 0;
+		}
+
+		@media(min-width: 1921px) {
+			width: calc(100% + #{get-rem(112)});
+			margin: 0 0 0 get-rem(-56);
+			padding: 0 get-rem(56) 0;
+		}
+	}
 }
 
