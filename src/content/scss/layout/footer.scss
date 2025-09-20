@@ -1,2 +1,57 @@
 @use "../abstracts/functions" as *;
 @use "../abstracts/vars" as *;
+
+.footer {
+
+	&__top {
+		display: grid;
+		grid-template-columns: 1fr 2fr 1fr;
+	}
+
+	&__logos {
+		display: flex;
+		align-items: center;
+		gap: get-rem(30);
+	}
+
+	&__nav {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: get-rem(19);
+
+
+		@media(min-width: 1320px) {
+			gap: get-vw(35);
+		}
+
+		@media(min-width: 1921px) {
+			gap: get-rem(35);
+		}
+	}
+
+	.phone-board {
+		margin-left: auto;
+	}
+
+	&__body {
+		background-color: var(--color-purple-dark);
+		border-radius: 0 0 get-rem(54) get-rem(54);
+		padding: get-rem(16) get-rem(21);
+		margin: get-rem(-1) 0 0;
+
+		@media(min-width: 640px) {
+			padding: get-rem(22) get-rem(30);
+		}
+
+		@media(min-width: 992px) {
+			border-radius: 0 0 get-vw(54) get-vw(54);
+			padding: get-vw(67) get-vw(115) get-vw(38);
+		}
+
+		@media(min-width: 1921px) {
+			border-radius: 0 0 get-rem(54) get-rem(54);
+			padding: get-rem(67) get-rem(115) get-rem(38);
+		}
+	}
+}

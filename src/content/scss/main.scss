@@ -472,9 +472,13 @@
 
 
 .title-block {
-	font: bold 5.05vw/1.57 $mainFont;
+	font: bold 4.9vw/1.57 $mainFont;
 	text-transform: uppercase;
 	color: var(--color-dark);
+
+	@media(min-width: 1200px) {
+		font-size: 5.05vw;
+	}
 
 	@media(min-width: 768px) {
 		font-size: 3.05vw;
@@ -1176,6 +1180,16 @@
 	&__slider {
 		width: calc(100% + 8.5vw);
 		overflow: visible;
+	}
+
+	.title--section-semi {
+		@media(max-width: 479px) {
+		    font-size: 8vw;
+
+			span {
+				font-size: 5vw;
+			}
+		}
 	}
 }
 

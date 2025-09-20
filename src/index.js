@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   setTimeout(() => {
     document.body.classList.add('loaded');
-  }, 500)
+  }, 200)
 
   // "modernizr" func"
   function isTouchDevice() {

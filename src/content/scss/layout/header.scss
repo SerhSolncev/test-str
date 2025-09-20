@@ -217,9 +217,17 @@
 	display: block;
 	width: 100%;
 
-	img {
+	svg, img {
 		width: 100%;
 		height: auto;
+	}
+
+	&--footer {
+		max-width: get-rem(156);
+	}
+
+	&--sec {
+		max-width: get-rem(117);
 	}
 }
 
