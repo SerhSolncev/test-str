@@ -6,6 +6,8 @@ import { Navigation, Pagination} from 'swiper/modules';
 import LazyLoad from 'vanilla-lazyload'
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import GLightbox from 'glightbox';
+import 'glightbox/dist/css/glightbox.css';
 
 document.addEventListener('DOMContentLoaded', (event) => {
   document.body.classList.add('loading');
@@ -46,7 +48,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 
   const initListSlider = (el) => {
-    if (el.dataset.slider !== 'banner-slider') return;
+    if (el.dataset.slider !== 'list-slider') return;
 
     const swiperContainer = el.querySelector('.swiper');
 
@@ -66,9 +68,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         loadPrevNextAmount: 2,
         loadPrevNext: true
       },
-      effect: 'fade',
-      fadeEffect: { crossFade: true },
-      loop: false,
+      loop: true,
       slidesPerView: 1,
       slidesPerGroup: 1,
       followFinger: true,
@@ -81,6 +81,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
       pagination: {
         el: el.querySelector('.swiper-pagination'),
         clickable: true
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1.6,
+          slidesPerGroup: 1,
+        },
+        768: {
+          slidesPerView: 2.4,
+          slidesPerGroup: 1,
+        },
+        992: {
+          slidesPerView: 2.5,
+          slidesPerGroup: 1,
+          spaceBetween: 92,
+        }
       },
     });
   };
@@ -315,4 +330,46 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 
   document.querySelectorAll('.js-anchor-block').forEach(anchor => resizeObserver.observe(anchor));
+
+  // lightbox
+  let lightbox;
+
+  function initGLightbox() {
+    if (lightbox) {
+      lightbox.destroy();
+    }
+
+    lightbox = GLightbox({
+      selector: '.js-glightbox',
+      touchNavigation: true,
+      loop: true,
+      autoplayVideos: true
+    });
+  }
+
+  initGLightbox();
+
+  const observerLightBox = new MutationObserver(mutations => {
+    let shouldReinit = false;
+
+    for (const mutation of mutations) {
+      for (const node of mutation.addedNodes) {
+        if (node.nodeType === 1 && node.querySelector('.glightbox')) {
+          shouldReinit = true;
+          break;
+        }
+      }
+
+      if (shouldReinit) break;
+    }
+
+    if (shouldReinit) {
+      initGLightbox();
+    }
+  });
+
+  observerLightBox.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
 })

@@ -47,7 +47,7 @@ block content
                         img(src="content/images/empty.gif" data-src="content/images/pics/pic1.webp" alt="" width="713" height="683" class="lazy")
     section.section.section--default
         .container
-            h2.title-block.js-animated-text(data-start-color="#fff" data-end-color="#444" data-start="top 85%" data-end="bottom 45%")
+            h2.title-block.js-animated-text(data-start-color="#fff" data-end-color="#444" data-start="top 85%" data-end="bottom 55%")
                 | Кожна дитина <span class="title-block__bg title-block__bg--blue">має здібності.</span> <br class="mobile-br"> Довіряючи <br> згуртованому <br class="mobile-br"> педагогічному колективу, <br class="mobile-br"> батьки <br> можуть бути впевнені у <br class="mobile-br"> <span class="title-block__bg title-block__bg--green">персоналізованому</span> <br> підході до їхньої дитини  - саме в цьому й полягає <br> <span class="title-block__bg title-block__bg--yellow">довіра</span> до закладу <br class="mobile-br"> освіти.
     section.section.section--default
         .container
@@ -121,12 +121,29 @@ block content
                                 img(src="content/images/empty.gif" data-src="content/images/pics/minipic4.webp" alt="" width="128" height="128" class="lazy")
                             picture.bottom-top__img
                                 img(src="content/images/empty.gif" data-src="content/images/pics/minipic5.webp" alt="" width="128" height="128" class="lazy")
+    section.section.section--bottom-sec
+        .container.container--big
             .bottom-sec
-                .list-slider
+                .list-slider(data-slider="list-slider")
                     .list-slider__top
                         h3.title.title--section-semi.title--white.title--ttu.js-light-show(data-show-y="20")
                             | Освітній
                             span.dc-bottom.dc-bottom--green простір
+                    .list-slider__slider.swiper
+                        .swiper-wrapper
+                            .swiper-slide
+                                a(href="content/images/pics/slide1.webp" data-gallery="gallery1").slide-item.js-glightbox
+                                    picture.slide-item__img
+                                        img(src="content/images/empty.gif" data-src="content/images/pics/slide1.webp" alt="" width="618" height="453" class="lazy")
+                            .swiper-slide
+                                a(href="content/images/pics/slide2.webp" data-gallery="gallery1").slide-item.js-glightbox
+                                    picture.slide-item__img
+                                        img(src="content/images/empty.gif" data-src="content/images/pics/slide2.webp" alt="" width="618" height="453" class="lazy")
+                            .swiper-slide
+                                a(href="content/images/pics/slide3.webp" data-gallery="gallery1").slide-item.js-glightbox
+                                    picture.slide-item__img
+                                        img(src="content/images/empty.gif" data-src="content/images/pics/slide3.webp" alt="" width="618" height="453" class="lazy")
+
 block script
 
 
