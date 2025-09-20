@@ -994,9 +994,10 @@
 		&--purp {
 
 			&::after {
-				width: 100%;
+				width: 115%;
 				height: 100%;
 				top: 54%;
+				left: 48%;
 				background-image: url(../images/icons/text-purp.svg);
 			}
 
@@ -1004,8 +1005,9 @@
 
 		&--yellow {
 			&::after {
-				width: 108%;
+				width: 115%;
 				height: 100%;
+				left: 55%;
 				background-image: url(../images/icons/text-yellow-sec.svg);
 			}
 		}
@@ -1013,7 +1015,7 @@
 }
 
 .bottom-block {
-	padding: 54px;
+	padding: get-rem(122) get-rem(115);
 	background-color: var(--color-purple-dark);
 	border-radius: get-rem(54);
 	mask-image: url("../images/pics/blue-mask.png");
@@ -1027,6 +1029,11 @@
 
 	@media(min-width: 992px) {
 		mask-image: url("../images/pics/blue-mask.webp");
+		padding: get-vw(122) get-vw(115);
+	}
+
+	@media(min-width: 1921px) {
+		padding: get-rem(122) get-rem(115);
 	}
 
 	&__top {
@@ -1039,14 +1046,17 @@
 
 	&__right {
 		width: 100%;
-		max-width: get-vw(468);
 		align-self: flex-end;
 		display: flex;
 		flex-direction: column;
-		gap: 60px;
+		max-width: get-vw(468);
+		gap: get-vw(75);
+		padding: 0 get-vw(15) 0 0;
 
 		@media(min-width: 1921px) {
 			max-width: get-rem(468);
+			gap: get-rem(75);
+			padding: 0 get-rem(15) 0 0;
 		}
 	}
 
