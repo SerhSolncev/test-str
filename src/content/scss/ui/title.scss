@@ -154,11 +154,11 @@
 		font: 300 #{get-rem(16)}/1.57 $mainFont;
 		letter-spacing: 0.01em;
 
-		@media(min-width: 992px) {
+		@media(min-width: 768px) {
 			font-size: get-rem(18);
 		}
 
-		@media(min-width: 1440px) {
+		@media(min-width: 992px) {
 			font-size: get-vw(22);
 		}
 

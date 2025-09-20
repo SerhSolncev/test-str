@@ -36,14 +36,14 @@ body {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	padding: get-rem(33) 0 0;
+	padding: get-rem(33) 0;
 
 	@media(min-width: 1366px) {
-		padding: get-vw(85) get-vw(56) 0;
+		padding: get-vw(85) get-vw(56) get-rem(20);
 	}
 
 	@media(min-width: 1921px) {
-		padding: get-rem(85) get-rem(56) 0;
+		padding: get-rem(85) get-rem(56) get-rem(20);
 	}
 
 	&::after {

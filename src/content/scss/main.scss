@@ -938,11 +938,12 @@
 	color: var(--color-white);
 
 	@media(min-width: 768px) {
-		font-size: 3.05vw;
+		font-size: 4.45vw;
 		line-height: 1.6;
+		max-width: 73vw;
 	}
 
-	@media(min-width: 1200px) {
+	@media(min-width: 992px) {
 		font-size: get-vw(54);
 		max-width: get-vw(938);
 	}
@@ -1014,21 +1015,22 @@
 	}
 }
 
-.bottom-block {
-	padding: get-rem(122) get-rem(115);
+.bottom-top {
+	padding: get-rem(69) get-rem(39);
 	background-color: var(--color-purple-dark);
-	border-radius: get-rem(54);
-	mask-image: url("../images/pics/blue-mask.png");
+	border-radius: get-rem(54) get-rem(54) 0 0;
+	mask-image: url("../images/pics/blue-mask.webp");
 	mask-repeat: no-repeat;
 	mask-position: top;
 	mask-size: 100% auto;
 
 	@media(min-width: 768px) {
-		mask-image: url("../images/pics/blue-mask.png");
+		padding: get-rem(69) get-rem(39);
+		mask-image: url("../images/pics/blue-mask-tablet.webp");
 	}
 
 	@media(min-width: 992px) {
-		mask-image: url("../images/pics/blue-mask.webp");
+		mask-image: url("../images/pics/blue-mask-mob.webp");
 		padding: get-vw(122) get-vw(115);
 	}
 
@@ -1040,8 +1042,12 @@
 		display: flex;
 		align-items: flex-start;
 		justify-content: space-between;
-		gap: 40px;
-		padding: 0 0 80px;
+		flex-direction: column;
+		gap: get-rem(40);
+
+		@media(min-width: 1200px) {
+		    flex-direction: row;
+		}
 	}
 
 	&__right {
@@ -1049,9 +1055,17 @@
 		align-self: flex-end;
 		display: flex;
 		flex-direction: column;
-		max-width: get-vw(468);
-		gap: get-vw(75);
-		padding: 0 get-vw(15) 0 0;
+		gap: get-rem(44);
+
+		@media(min-width: 768px) {
+			padding: 0 19% 0 0;
+		}
+
+		@media(min-width: 992px) {
+			max-width: get-vw(468);
+			gap: get-vw(75);
+			padding: 0 get-vw(15) 0 0;
+		}
 
 		@media(min-width: 1921px) {
 			max-width: get-rem(468);
@@ -1074,8 +1088,8 @@
 		z-index: var(--i);
 
 		@media(min-width: 768px) {
-			width: get-rem(128);
-			height: get-rem(133);
+			width: get-rem(84);
+			height: get-rem(88);
 		}
 
 		@media(min-width: 992px) {
@@ -1096,8 +1110,9 @@
 
 		&:not(:last-child) {
 			margin: 0 get-rem(-42) 0 0;
+
 			@media(min-width: 768px) {
-				margin: 0 get-rem(-51) 0 0;
+				margin: 0 get-rem(-33) 0 0;
 			}
 
 			@media(min-width: 992px) {
