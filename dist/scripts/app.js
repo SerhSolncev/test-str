@@ -20,7 +20,7 @@ return /******/ (() => { // webpackBootstrap
     if(true) {
       (function() {
         var localsJsonString = undefined;
-        // 1758407306122
+        // 1758480729865
         var cssReload = __webpack_require__(140)(module.id, {});
         // only invalidate when locals change
         if (
@@ -308,7 +308,7 @@ module.exports = function (moduleId, options) {
     if(true) {
       (function() {
         var localsJsonString = undefined;
-        // 1758407305997
+        // 1758480729784
         var cssReload = __webpack_require__(140)(module.id, {});
         // only invalidate when locals change
         if (
@@ -19713,8 +19713,8 @@ document.addEventListener('DOMContentLoaded', event => {
       }
     });
   }, {
-    rootMargin: '0px 0px -5% 0px',
-    threshold: 0.3
+    rootMargin: '0px 0px -60px 0px',
+    threshold: 0.25
   });
   document.querySelectorAll('.js-anchor-block').forEach(el => observerSec.observe(el));
   const resizeObserver = new ResizeObserver(() => {
@@ -19727,6 +19727,18 @@ document.addEventListener('DOMContentLoaded', event => {
   const header = document.querySelector('.js-header');
   let headerHeight = header.offsetHeight;
   window.addEventListener('scroll', function () {
+    let current = null;
+    document.querySelectorAll('.js-anchor-block').forEach(block => {
+      const rect = block.getBoundingClientRect();
+      if (rect.top <= headerFixedHeight + 50 && rect.bottom >= headerFixedHeight + 50) {
+        current = block.id;
+      }
+    });
+    if (current) {
+      document.querySelectorAll('.js-nav-anchor').forEach(link => {
+        link.classList.toggle('is-current', link.getAttribute('href') === `#${current}`);
+      });
+    }
     if (window.scrollY > headerHeight) {
       headerFixed.classList.add('onscroll');
     } else {
@@ -19887,7 +19899,7 @@ module.exports = function (urlString) {
     if(true) {
       (function() {
         var localsJsonString = undefined;
-        // 1758407305928
+        // 1758480729726
         var cssReload = __webpack_require__(140)(module.id, {});
         // only invalidate when locals change
         if (
@@ -20003,7 +20015,7 @@ module.exports = function (urlString) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("ccf2fe1bdf112b66e822")
+/******/ 		__webpack_require__.h = () => ("9da20ea6ae6171448f4c")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

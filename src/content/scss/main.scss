@@ -11,13 +11,6 @@
 @use "base/fonts";
 @import '/node_modules/swiper/swiper-bundle.min.css';
 
-#top {
-	position: absolute;
-	top: 0;
-	left: 0;
-	opacity: 0;
-}
-
 .container {
 	width: 100%;
 	max-width: get-rem(1550);

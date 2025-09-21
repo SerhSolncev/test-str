@@ -326,7 +326,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
       }
     });
-  }, { rootMargin: '0px 0px -5% 0px', threshold: 0.3 });
+  }, { rootMargin: '0px 0px -60px 0px', threshold: 0.25 });
 
   document.querySelectorAll('.js-anchor-block').forEach(el => observerSec.observe(el));
 
@@ -343,6 +343,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let headerHeight = header.offsetHeight;
 
   window.addEventListener('scroll', function () {
+
+    let current = null;
+    document.querySelectorAll('.js-anchor-block').forEach(block => {
+      const rect = block.getBoundingClientRect();
+      if (rect.top <= headerFixedHeight + 50 && rect.bottom >= headerFixedHeight + 50) {
+        current = block.id;
+      }
+    });
+    if (current) {
+      document.querySelectorAll('.js-nav-anchor').forEach(link => {
+        link.classList.toggle('is-current', link.getAttribute('href') === `#${current}`);
+      });
+    }
 
     if (window.scrollY > headerHeight) {
       headerFixed.classList.add('onscroll');
