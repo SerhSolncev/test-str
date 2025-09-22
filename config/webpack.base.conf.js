@@ -64,7 +64,12 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg|webp)$/i,
         type: "asset/resource",
         generator: {
-          filename: `${PATHS.assets}images/[name][ext]`
+          filename: (pathData) => {
+            const relativePath = path
+            .relative(path.resolve(__dirname, "../src/content/images"), pathData.filename)
+            .replace(/\\/g, "/");
+            return `${PATHS.assets}images/${relativePath}`;
+          },
         },
       },
       {
