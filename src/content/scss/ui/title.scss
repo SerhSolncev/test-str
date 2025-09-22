@@ -178,6 +178,17 @@
 	&--white {
 		color: var(--color-white);
 	}
+
+	a {
+		color: inherit;
+		border-bottom: 1px solid transparent;
+
+		.desktop-device & {
+		    &:hover {
+				border-color: var(--color-white);
+		    }
+		}
+	}
 }
 
 .dc-bottom {

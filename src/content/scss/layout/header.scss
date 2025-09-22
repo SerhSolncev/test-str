@@ -228,6 +228,18 @@
 
 	&--sec {
 		max-width: get-rem(117);
+
+		img  {
+			transition: transform 0.15s ease-in;
+		}
+
+		.desktop-device & {
+		    &[href]:hover {
+		        img {
+			        transform: scale(0.95);
+		        }
+		    }
+		}
 	}
 }
 

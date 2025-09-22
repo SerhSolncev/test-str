@@ -109,7 +109,7 @@ pre {
 a {
 	background-color: transparent;
 	text-decoration: none;
-	transition: color 0.2s linear;
+	transition: color 0.2s linear, border-color 0.2s linear;
 	box-sizing: border-box;
 }
 
